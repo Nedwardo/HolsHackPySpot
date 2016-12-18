@@ -1,0 +1,14 @@
+<?php
+require("vendor/autoload.php");
+$session = new SpotifyWebAPI\Session(
+    '5a4349a1c5394929bf7064dae0747d12',
+    '3c1700f1c4884f6781152b5745246967',
+    'http://localhost/HolsHackPySpot/Index.php'
+);
+$api = new SpotifyWebAPI\SpotifyWebAPI();
+//curl "https://accounts.spotify.com/authorize/?client_id=5fe01282e44241328a84e7c5cc169165&response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2Fcallback&scope=user-read-private%20user-read-email&state=34fFs29kd09";
+if
+    $session->requestAccessToken();
+    $api->setAccessToken($session->getAccessToken());
+    print_r($api->me());
+?>
